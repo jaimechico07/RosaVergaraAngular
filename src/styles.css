@@ -21,3 +21,8 @@
   font-weight: 500;
 }
 
+@font-face {
+  font-family: 'Fugaz One';
+  src: url('./assets/fonts/FugazOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+}

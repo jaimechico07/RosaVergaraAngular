@@ -1,0 +1,9 @@
+<button
+  [ngClass]="[
+    'font-bold rounded-full px-12 py-2 transition mt-4',
+    variant === 'primary' ? 'bg-primary-pink-100 text-white' : '',
+    variant === 'secondary' ? 'bg-gray-200 text-black' : ''
+  ]"
+>
+  {{ label }}
+</button>
