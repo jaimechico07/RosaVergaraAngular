@@ -1,6 +1,6 @@
 <section class="relative mt-10">
   <h2
-    class="mb-10 text-dynamic-h2 text-primary-400 font-fugaz-one font-bold bg-primary-gray-200 text-center rounded-2xl py-2"
+    class="mb-10 shadow-primary-gray-100 text-dynamic-h2 text-primary-400 font-fugaz-one font-bold bg-primary-gray-200 text-center rounded-2xl py-2"
   >
     Servicios
   </h2>
@@ -24,7 +24,11 @@
         />
       </div>
     </div>
-    <swiper-container #swiperRef init="false" class="max-w-2xl">
+    <swiper-container
+      #swiperRef
+      init="false"
+      class="max-w-2xl shadow-primary-gray-100 rounded-3xl"
+    >
       <swiper-slide
         *ngFor="let slide of slides"
         class="bg-primary-gray-200 flex flex-col justify-between items-center h-auto gap-8 rounded-3xl"

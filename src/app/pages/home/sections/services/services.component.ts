@@ -45,7 +45,7 @@ export class ServicesComponent {
       // usar un microtask para dar tiempo a que el custom element cargue
       setTimeout(() => {
         swiper.initialize?.();
-      });
+      }, 0);
     }
   }
 }

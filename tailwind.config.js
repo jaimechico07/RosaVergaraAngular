@@ -43,7 +43,7 @@ theme: {
         "hero-nous": "url('/img/hero-estudio-desktop.png')",
       },
       boxShadow: {
-        "primary-gray-100": "-40px 0px 65px #333333",
+        "primary-gray-100": "2px 3px 28px 8px rgba(51,51,51,0.82)",
       },
       colors: {
         "primary-100": "#FBEDF8",
