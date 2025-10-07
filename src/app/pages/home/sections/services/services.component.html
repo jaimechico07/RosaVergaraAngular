@@ -1,0 +1,57 @@
+<section class="relative mt-10">
+  <h2
+    class="mb-10 text-dynamic-h2 text-primary-400 font-fugaz-one font-bold bg-primary-gray-200 text-center rounded-2xl py-2"
+  >
+    Servicios
+  </h2>
+  <div class="max-w-[800px] mx-auto relative">
+    <div class="flex justify-between items-center gap-10">
+      <div
+        class="swiper-button-prev_service bg-primary-pink-100 p-3 cursor-pointer rounded-full flex justify-center"
+      >
+        <ng-icon
+          name="heroChevronLeftSolid"
+          class="text-white text-2xl font-bold"
+        />
+      </div>
+      <div class="swiper-pagination_service"></div>
+      <div
+        class="swiper-button-next_service bg-primary-pink-100 p-3 cursor-pointer rounded-full flex justify-center"
+      >
+        <ng-icon
+          name="heroChevronRightSolid"
+          class="text-white text-2xl font-bold"
+        />
+      </div>
+    </div>
+    <swiper-container #swiperRef init="false" class="max-w-2xl">
+      <swiper-slide
+        *ngFor="let slide of slides"
+        class="bg-primary-gray-200 flex flex-col justify-between items-center h-auto gap-8 rounded-3xl"
+      >
+        <div class="px-6 pb-6 pt-10 flex flex-col gap-8">
+          <h3
+            class="text-dynamic-h3 text-primary-400 font-fugaz-one text-center font-bold"
+          >
+            {{ slide.title }}
+          </h3>
+          <p class="text-dynamic-des text-white text-center">
+            {{ slide.text }}
+          </p>
+        </div>
+        <div class="w-full">
+          <img
+            [src]="slide.image"
+            [alt]="slide.title"
+            class="w-full object-cover h-64 object-top"
+          />
+          <button
+            class="bg-primary-pink-100 text-dynamic-des text-white py-4 w-full text-center rounded-b-3xl"
+          >
+            Ver más
+          </button>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</section>
