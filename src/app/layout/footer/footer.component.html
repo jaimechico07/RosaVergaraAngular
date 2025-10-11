@@ -1,1 +1,83 @@
-<p>footer works!</p>
+<footer
+  class="grid grid-cols-1 xl:grid-cols-3 place-items-center items-start mt-10 bg-primary-gray-200 p-8 gap-8"
+>
+  <img
+    class="w-full md:max-w-[500px]"
+    src="../../../assets/logoRosaVergara.svg"
+    alt="logo"
+  />
+  <div class="grid gap-4 grid-cols-1">
+    <h3
+      class="text-center xl:text-start font-comfortaa text-dynamic-des bg-primary-pink-100 text-transparent bg-clip-text font-bold"
+    >
+      CONTÁCTOS
+    </h3>
+    <ul class="flex flex-col gap-4 items-center xl:items-start">
+      <li class="flex items-center gap-2">
+        <ng-icon name="bootstrapFacebook" class="text-primary-700 text-2xl" />
+        <p class="text-sm text-white">
+          Rosa Vergara - Maquilladora Profesional
+        </p>
+      </li>
+      <li class="flex items-center gap-2">
+        <ng-icon name="bootstrapWhatsapp" class="text-primary-700 text-2xl" />
+        <p class="text-sm text-white">+51 123 456 789</p>
+      </li>
+      <li class="flex items-center gap-2">
+        <ng-icon name="heroEnvelope" class="text-primary-700 text-2xl" />
+        <p class="text-sm text-white">
+          contacto&#64;profesionesdigitales.online
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div class="grid gap-4 grid-cols-1">
+    <a
+      href=""
+      class="text-center xl:text-start font-comfortaa text-dynamic-des bg-primary-pink-100 text-transparent bg-clip-text font-bold"
+      routerLink="/"
+      routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      INICIO
+    </a>
+    <ul class="flex flex-col gap-4 items-center xl:items-start">
+      <li>
+        <a
+          href=""
+          class="text-lg text-white"
+          routerLink="/maquillaje"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          >Maquillaje</a
+        >
+      </li>
+      <li>
+        <a
+          href=""
+          class="text-lg text-white"
+          routerLink="/escuela"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          >Escuela</a
+        >
+      </li>
+      <li>
+        <a
+          href=""
+          class="text-lg text-white"
+          routerLink="/nosotros"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          >Nosotros</a
+        >
+      </li>
+      <li>
+        <a
+          href=""
+          class="text-lg text-white"
+          routerLink="/estudio"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          >Capacitaciones</a
+        >
+      </li>
+    </ul>
+  </div>
+</footer>

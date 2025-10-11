@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { NgIconsModule } from '@ng-icons/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [NgIconsModule, RouterModule],
   templateUrl: './footer.component.html',
-  styles: ``
+  styles: ``,
 })
-export class FooterComponent {
-
-}
+export class FooterComponent {}

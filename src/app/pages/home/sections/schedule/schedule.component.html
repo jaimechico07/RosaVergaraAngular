@@ -1,0 +1,61 @@
+<section class="mt-10 flex flex-col gap-8">
+  <div class="rounded-full py-2 shadow-primary-gray-100 bg-primary-gray-200">
+    <h2 class="text-dynamic-h2 font-fugaz-one text-center text-white">
+      Horario de
+      <span class="bg-primary-pink-100 bg-clip-text text-transparent"
+        >Atención</span
+      >
+    </h2>
+  </div>
+  <ul
+    class="flex justify-center flex-wrap gap-4 rounded-2xl p-6 w-full max-w-6xl mx-auto bg-primary-gray-200 shadow-primary-gray-100"
+  >
+    <li *ngFor="let day of days" [class]="getDayCardClasses(day.name)">
+      <p
+        class="text-dynamic-des bg-primary-pink-100 font-fugaz-one bg-clip-text text-transparent"
+      >
+        {{ day.name }}
+      </p>
+      <p class="text-white font-fugaz-one text-sm">{{ day.hours }}</p>
+
+      <!-- Indicador del día actual -->
+      <div
+        *ngIf="isToday(day.name)"
+        class="absolute -top-2 -right-2 w-6 h-6 bg-primary-pink-100 rounded-full flex items-center justify-center"
+      >
+        <span class="text-white text-xs font-bold">✓</span>
+      </div>
+
+      <!-- Etiqueta "Hoy" -->
+      <div
+        *ngIf="isToday(day.name)"
+        class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-primary-pink-100 text-white text-xs font-bold px-2 py-1 rounded-full"
+      >
+        Hoy
+      </div>
+    </li>
+  </ul>
+  <div class="rounded-2xl p-4 shadow-primary-gray-100 bg-primary-gray-200">
+    <h3
+      class="text-dynamic-h3 font-fugaz-one text-center bg-primary-pink-100 bg-clip-text text-transparent"
+    >
+      Encuentranos en Nuestras Oficinas
+    </h3>
+    <div
+      class="flex flex-wrap items-center justify-center gap-6 mt-4 text-white text-sm"
+    >
+      <p class="flex items-center gap-2 leading-none m-0 p-0">
+        <ng-icon name="heroMapPin" class="text-primary-700 text-dynamic-des" />
+        San Isidro: Av. Arequipa Nº 3484
+      </p>
+      <p class="flex items-center gap-2 leading-none m-0 p-0">
+        <ng-icon name="heroMapPin" class="text-primary-700 text-dynamic-des" />
+        Sede Surco: Av. Circunvalación Nº 653
+      </p>
+      <p class="flex items-center gap-2 leading-none m-0 p-0">
+        <ng-icon name="heroMapPin" class="text-primary-700 text-dynamic-des" />
+        Sede Pueblo Libre: General Artigas 972, Dpto. 601
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,90 @@
+<nav
+  class="flex justify-between bg-primary-gray-200 w-full items-center py-4 px-12 rounded-full border-[3px] border-primary-700 relative"
+>
+  <img src="../../../assets/logoRosaVergara.svg" alt="" />
+  <ul class="flex gap-12 text-gray-300 text-lg items-center">
+    <li class="cursor-pointer hover:text-gray-100">
+      <a
+        routerLink="/"
+        routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Inicio</a
+      >
+    </li>
+
+    <li class="cursor-pointer hover:text-gray-100">
+      <a
+        routerLink="/estudio"
+        routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+        >Estudio</a
+      >
+    </li>
+    <li
+      class="cursor-pointer hover:text-gray-100 flex items-center relative"
+      (mouseenter)="toggleDropdown()"
+      (mouseleave)="toggleDropdown()"
+    >
+      <a
+        routerLink="/escuela"
+        routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+        c
+        >Escuela
+      </a>
+      <ng-icon
+        name="heroChevronUp"
+        class="material-symbols-outlined transition-transform duration-300 ml-2"
+        [ngClass]="{ 'rotate-180': isVisible }"
+      />
+      <div
+        class="absolute bg-white w-auto top-10 rounded-xl text-black shadow-md z-20 overflow-hidden"
+        [ngStyle]="{
+          transition: 'max-height 0.5s ease-in-out',
+          'max-height': isVisible ? '200px' : '0'
+        }"
+      >
+        <ul class="flex flex-col">
+          <li
+            class="cursor-pointer px-4 py-2 hover:bg-primary-pink-100 hover:text-white"
+          >
+            <a routerLink="/curso" routerLinkActive="active">Curso</a>
+          </li>
+          <li
+            class="cursor-pointer px-4 py-2 hover:bg-primary-pink-100 hover:text-white"
+          >
+            <a routerLink="/taller" routerLinkActive="active">Taller</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="cursor-pointer hover:text-gray-100">
+      <a
+        routerLink="/nosotros"
+        routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+        >Nosotros</a
+      >
+    </li>
+    <li
+      class="cursor-pointer hover:text-primary-600 transition duration-300 border border-transparent hover:border hover:border-primary-600 bg-primary-pink-100 hover:bg-primary-gray-100 px-8 py-2 rounded-full"
+    >
+      <a routerLink="/contacto" routerLinkActive="active">Contáctanos</a>
+    </li>
+  </ul>
+</nav>
+
+<nav class="absolute gap-5 pl-8 items-center left-0 flex flex-col">
+  <hr class="h-32 w-1 rounded-2xl bg-primary-700" />
+  <ul>
+    <li>
+      <ng-icon
+        name="bootstrapWhatsapp"
+        class="text-primary-700 text-dynamic-des cursor-pointer"
+      />
+    </li>
+    <li>
+      <ng-icon
+        name="bootstrapFacebook"
+        class="text-primary-700 text-dynamic-des cursor-pointer"
+      />
+    </li>
+  </ul>
+</nav>

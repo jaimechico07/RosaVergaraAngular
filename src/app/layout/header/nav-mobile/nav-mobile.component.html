@@ -1,0 +1,204 @@
+<!-- <nav class="flex flex-col h-screen">
+  <div
+    class="flex justify-between items-center py-4 bg-primary-gray-200 px-8 border-primary-700 border-b-2"
+  >
+    <img src="../../../../assets/logoRosaVergara.svg" alt="" />
+    <div>
+      <ng-icon name="bootstrapMenuButtonWide" />
+      <ng-icon name="bootstrapMenuButtonWideFill" />
+    </div>
+  </div>
+
+  <div class="flex-1 bg-primary-gray-200">
+    <ul
+      class="flex flex-col justify-center h-full gap-12 text-gray-300 text-lg items-center"
+    >
+      <li class="cursor-pointer hover:text-gray-100">
+        <a
+          routerLink="/"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Inicio</a
+        >
+      </li>
+
+      <li class="cursor-pointer hover:text-gray-100">
+        <a
+          routerLink="/estudio"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          >Estudio</a
+        >
+      </li>
+      <li
+        class="cursor-pointer hover:text-gray-100 flex items-center relative"
+        (mouseenter)="toggleDropdown()"
+        (mouseleave)="toggleDropdown()"
+      >
+        <a
+          routerLink="/escuela"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          c
+          >Escuela
+        </a>
+        <ng-icon
+          name="heroChevronUp"
+          class="material-symbols-outlined transition-transform duration-300 ml-2"
+          [ngClass]="{ 'rotate-180': isVisible }"
+        />
+        <div
+          class="absolute bg-white w-auto top-10 rounded-xl text-black shadow-md z-20 overflow-hidden"
+          [ngStyle]="{
+            transition: 'max-height 0.5s ease-in-out',
+            'max-height': isVisible ? '200px' : '0'
+          }"
+        >
+          <ul class="flex flex-col">
+            <li
+              class="cursor-pointer px-4 py-2 hover:bg-primary-pink-100 hover:text-white"
+            >
+              <a routerLink="/curso" routerLinkActive="active">Curso</a>
+            </li>
+            <li
+              class="cursor-pointer px-4 py-2 hover:bg-primary-pink-100 hover:text-white"
+            >
+              <a routerLink="/taller" routerLinkActive="active">Taller</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="cursor-pointer hover:text-gray-100">
+        <a
+          routerLink="/nosotros"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          >Nosotros</a
+        >
+      </li>
+      <li
+        class="cursor-pointer hover:text-primary-600 transition duration-300 border border-transparent hover:border hover:border-primary-600 bg-primary-pink-100 hover:bg-primary-gray-100 px-8 py-2 rounded-full"
+      >
+        <a routerLink="/contacto" routerLinkActive="active">Contáctanos</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+<!-- Navbar -->
+<!-- Navbar siempre visible -->
+<nav
+  class="flex justify-between items-center py-4 bg-primary-gray-200 px-8 border-primary-700 border-b-2 z-30 relative"
+>
+  <img src="../../../../assets/logoRosaVergara.svg" alt="Rosa Vergara" />
+  <div (click)="toggleMenu()" class="cursor-pointer">
+    <!-- Icono cambia según estado -->
+    <ng-icon
+      [name]="
+        isMenuOpen ? 'bootstrapMenuButtonWide' : 'bootstrapMenuButtonWideFill'
+      "
+      class="text-2xl transition-all duration-300 text-primary-700"
+    />
+  </div>
+</nav>
+
+<!-- Menú lateral que baja desde el navbar -->
+<div
+  class="fixed top-[73px] left-0 w-full bg-primary-gray-200 z-20 overflow-hidden transition-all duration-500 ease-in-out"
+  [ngClass]="{
+    'h-[calc(100vh-73px)] opacity-100': isMenuOpen,
+    'h-0 opacity-0': !isMenuOpen
+  }"
+>
+  <div class="h-full bg-primary-gray-200 overflow-y-auto">
+    <ul
+      class="flex flex-col justify-center h-full gap-8 text-gray-300 text-lg items-center pt-8"
+    >
+      <li
+        class="cursor-pointer hover:text-gray-100 w-full text-center"
+        (click)="closeMenu()"
+      >
+        <a
+          routerLink="/"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="block py-3"
+          >Inicio</a
+        >
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-gray-100 w-full text-center"
+        (click)="closeMenu()"
+      >
+        <a
+          routerLink="/estudio"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          class="block py-3"
+          >Estudio</a
+        >
+      </li>
+
+      <!-- Dropdown para Escuela -->
+      <li
+        class="cursor-pointer hover:text-gray-100 flex flex-col items-center relative w-full"
+        [ngClass]="{ 'bg-white': isVisible }"
+      >
+        <div
+          class="flex items-center justify-center py-3"
+          (click)="toggleDropdown()"
+        >
+          <a
+            routerLink="/escuela"
+            routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600 duration-300"
+            [ngClass]="{ 'text-primary-700 font-bold': isVisible }"
+            >Escuela
+          </a>
+          <ng-icon
+            name="heroChevronUp"
+            class="material-symbols-outlined transition-transform duration-300 ml-2"
+            [ngClass]="{ 'rotate-180 text-primary-700': isVisible }"
+          />
+        </div>
+
+        <!-- Submenú dropdown -->
+        <div
+          class="bg-white w-full text-black shadow-md overflow-hidden transition-all duration-300"
+          [class]="
+            isVisible ? 'max-h-32 opacity-100 mt-2' : 'max-h-0 opacity-0'
+          "
+        >
+          <ul class="flex flex-col">
+            <li
+              class="cursor-pointer px-4 py-2 hover:bg-primary-pink-100 hover:text-white text-center"
+              (click)="closeMenu()"
+            >
+              <a routerLink="/curso" routerLinkActive="active">Curso</a>
+            </li>
+            <li
+              class="cursor-pointer px-4 py-2 hover:bg-primary-pink-100 hover:text-white text-center"
+              (click)="closeMenu()"
+            >
+              <a routerLink="/taller" routerLinkActive="active">Taller</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-gray-100 w-full text-center"
+        (click)="closeMenu()"
+      >
+        <a
+          routerLink="/nosotros"
+          routerLinkActive="underline decoration-2 underline-offset-4 decoration-primary-600"
+          class="block py-3"
+          >Nosotros</a
+        >
+      </li>
+
+      <li
+        class="cursor-pointer hover:text-primary-600 transition duration-300 border border-transparent hover:border hover:border-primary-600 bg-primary-pink-100 hover:bg-primary-gray-100 px-8 py-3 rounded-full mt-4"
+        (click)="closeMenu()"
+      >
+        <a routerLink="/contacto" routerLinkActive="active">Contáctanos</a>
+      </li>
+    </ul>
+  </div>
+</div>

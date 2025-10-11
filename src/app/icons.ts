@@ -1,4 +1,8 @@
-import { heroChevronUp } from '@ng-icons/heroicons/outline';
+import {
+  heroChevronUp,
+  heroMapPin,
+  heroEnvelope,
+} from '@ng-icons/heroicons/outline';
 import {
   heroChevronRightSolid,
   heroChevronLeftSolid,
@@ -7,6 +11,8 @@ import {
   bootstrapWhatsapp,
   bootstrapFacebook,
   bootstrapCheckCircle,
+  bootstrapMenuButtonWide,
+  bootstrapMenuButtonWideFill,
 } from '@ng-icons/bootstrap-icons';
 
 export const appIcons = {
@@ -16,4 +22,8 @@ export const appIcons = {
   bootstrapWhatsapp,
   bootstrapFacebook,
   bootstrapCheckCircle,
+  heroMapPin,
+  heroEnvelope,
+  bootstrapMenuButtonWide,
+  bootstrapMenuButtonWideFill,
 };
