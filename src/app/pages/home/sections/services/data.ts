@@ -8,7 +8,7 @@ export const SLIDES: Slide[] = [
   {
     title: 'Packs Quinceañeros',
     text: 'Para esta fecha importante y única, tenemos especial cuidado en los todos y difuminados, de acuerdo a tu tono de piel y el color de tu vestido.',
-    image: '../../../../../assets/home/services/quinceañero.svg',
+    image: '../../../../../assets/home/services/quinceanero.svg',
   },
   {
     title: 'Packs Novia Clásica',
