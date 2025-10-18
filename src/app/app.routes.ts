@@ -7,10 +7,10 @@ export const routes: Routes = [
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'estudio',
+    path: 'servicios',
     loadComponent: () =>
-      import('./pages/estudio/estudio.component').then(
-        (m) => m.EstudioComponent
+      import('./pages/services/services.component').then(
+        (m) => m.ServicesComponent
       ),
   },
 
